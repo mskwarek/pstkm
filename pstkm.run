@@ -1,0 +1,8 @@
+reset;
+model Siec.mod;
+data dw.dat;
+option solver './cplex';
+solve;
+display cables, C;
+display XXed, d_served, Profit;
+display is_cabinet;
