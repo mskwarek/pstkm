@@ -5,4 +5,4 @@ option solver './cplex';
 solve;
 display cables, C;
 display XXed, d_served, Profit;
-display is_cabinet;
+display is_cabinet, is_cable_used;
