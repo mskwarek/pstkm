@@ -1,6 +1,8 @@
-set N;                     #Wezly
+set CENTRAL;
+set T;
+set D;  #Zapotrzebowania
+set N := CENTRAL union D union T;                     #Wezly
 set L := (N cross N);      #Polaczenia logiczne pomiedzy wezlami
-set D within (N cross N);  #Zapotrzebowania
 set C;                     #Grubosc kabla
 set P within (N cross N);  #Sciezki - polaczenia fizyczne miedzy wezlami
 
@@ -28,17 +30,17 @@ param bpe {n in N, (i,j) in P} binary :=		# be - wyklady - konieczne do kirchhof
     else 0; 
 
 
-var Xed {(i, j) in L, (k,l) in D, m in C} binary;       #zapotrzebowania na polaczeniu
+var Xed {(i, j) in L, k in CENTRAL, l in D, m in C} binary;       #zapotrzebowania na polaczeniu
 var XXed {(i, j) in P, (k,l) in L, m in C} binary;       #zapotrzebowania na polaczeniu
-var d_served {(k,l) in D} binary;    		#zmienna binara - realizowane zapotrzebowania
+var d_served {k in CENTRAL, l in D} binary;    		#zmienna binara - realizowane zapotrzebowania
 
 var hpd {L};
 subject to Demand{(i,j)in L}:
-        hpd[i,j] = sum{(k,l) in D, m in C}Xed[i,j,k,l,m]*m;
+        hpd[i,j] = sum{k in CENTRAL, l in D, m in C}Xed[i,j,k,l,m]*m;
 
-param sum_d := sum{(k,l) in D} hd[k,l];
+param sum_d := sum{l in D} hd[l];
 subject to usage_l{(i,j) in L, m in C}:
-	(sum {(k,l) in D} Xed[i,j,k,l,m]*m) <= sum_d;
+	(sum {k in CENTRAL,l in D} Xed[i,j,k,l,m]*m) <= sum_d;
 
 var cables{P, C} binary;
 subject to Demand_on_edge{(i,j) in P, m in C}:
@@ -50,21 +52,21 @@ subject to path_exists{(i,j) in P, m in C}:
 
 param path_counter = card(P);
 var is_cabinet{N} binary;
-subject to cabinet_needed{n in N}:
+subject to cabinet_needed{n in T}:
         sum{(i,j) in P, m in C} (ape[n,i,j]+bpe[n,i,j])*cables[i,j,m]*m <= path_counter*is_cabinet[n];
 
 
 maximize Profit:       	  			#f. celu
-	 sum{(k,l) in D}(d_served[k,l] * M * hd[k,l])
+	 sum{k in CENTRAL ,l in D}(d_served[k,l] * M * hd[l])
 	-sum{(i,j) in P, m in C}(cables[i,j,m]*hc[m])
         -(sum{n in N}is_cabinet[n])*NU
 	-sum{(i,j) in P}is_cable_used[i,j]*TC[i,j]
 ;
 
-subject to Kirchhoff{n in N, (k,l) in D}:
+subject to Kirchhoff{n in N, k in CENTRAL, l in D}:
 	(sum {(i, j) in L, m in C} ae[n,i,j]*Xed[i,j,k,l,m]*m)
 	- (sum {(i,j) in L, m in C} be[n,i,j]*Xed[i,j,k,l,m]*m) =
-	(if n = k then hd[k,l]*d_served[k,l] else if n = l then - hd[k,l]*d_served[k,l] else 0);
+	(if n = k then hd[l]*d_served[k,l] else if n = l then - hd[l]*d_served[k,l] else 0);
 
 subject to Kirchhoff_Paths{n in N, (k,l) in L}:
 	(sum {(i, j) in P, m in C} ape[n,i,j]*XXed[i,j,k,l,m]*m)

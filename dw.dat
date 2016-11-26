@@ -1,5 +1,9 @@
-set N := N1 N2 N3 N4 N5;
-      	 #N4 N5;
+set T := N3 N5;
+set CENTRAL := N1;
+set D :=
+	N2
+	N4;
+
 set P := 	(N1, N3) (N3, N2) (N3, N4)
       		#(N1, N4)
 		(N5, N2) (N3, N5) (N5, N3)
@@ -16,9 +20,6 @@ param TC := 	N1 N3 7
 		N5 N3 10
 ;
 
-set D :=
-	(N1, N2)
-	(N1, N4);
 
 set C :=
 	2 3 1;
@@ -28,8 +29,9 @@ param M := 100;
 param NU := 20;
 
 param hd :=
-	N1 N2 2
-	N1 N4 1;
+	N2 2
+	N4 1
+;
 
 param hc :=
       	 1 10
