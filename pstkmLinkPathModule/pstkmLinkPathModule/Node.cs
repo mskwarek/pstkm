@@ -8,5 +8,7 @@ namespace pstkmLinkPathModule
 {
     class Node
     {
+        private string name;
+        public string Name { get; set; }
     }
 }

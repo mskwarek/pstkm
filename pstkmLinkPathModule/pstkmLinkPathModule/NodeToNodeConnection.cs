@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace pstkmLinkPathModule
 {
-    class Link : NodeToNodeConnection
+    interface NodeToNodeConnection
     {
-        private Node start_node;
-        private Node end_node;
 
-        public Link() { }
     }
 }
