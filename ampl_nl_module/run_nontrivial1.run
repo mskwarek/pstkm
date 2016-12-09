@@ -1,0 +1,9 @@
+reset;
+model 'Siec.mod';
+data 'nontrivial1.dat';
+option solver './cplex';
+solve;
+display d_served;
+display is_cabinet;
+display cables;
+display Profit;
