@@ -43,8 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="amplComponents\amplComponent.cs" />
+    <Compile Include="amplComponents\amplComponentFactory.cs" />
+    <Compile Include="amplComponents\Param.cs" />
+    <Compile Include="amplComponents\unknownComponent.cs" />
+    <Compile Include="Graph.cs" />
+    <Compile Include="NodeToNodeConnection.cs" />
+    <Compile Include="Link.cs" />
+    <Compile Include="Node.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="amplComponents\Set.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

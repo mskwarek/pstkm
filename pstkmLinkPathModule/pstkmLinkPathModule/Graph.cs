@@ -8,13 +8,13 @@ namespace pstkmLinkPathModule
 {
     class Graph
     {
-        private Link[] link;
+        private List<NodeToNodeConnection> link;
         public Graph()
         {
 
         }
 
-        public void buildGraph(NodeToNodeConnection[] links)
+        public void buildGraph(List<NodeToNodeConnection> links)
         {
 
         }

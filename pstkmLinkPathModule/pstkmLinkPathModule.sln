@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pstkmLinkPathModule", "pstkmLinkPathModule\pstkmLinkPathModule.csproj", "{2C874DCE-FF2F-4737-8C61-5EC70C3A5E02}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkPathUnitTest", "LinkPathUnitTest\LinkPathUnitTest.csproj", "{C93F8E5E-E9B6-443D-B8BF-7A330D32D417}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2C874DCE-FF2F-4737-8C61-5EC70C3A5E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C874DCE-FF2F-4737-8C61-5EC70C3A5E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C874DCE-FF2F-4737-8C61-5EC70C3A5E02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C93F8E5E-E9B6-443D-B8BF-7A330D32D417}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C93F8E5E-E9B6-443D-B8BF-7A330D32D417}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C93F8E5E-E9B6-443D-B8BF-7A330D32D417}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C93F8E5E-E9B6-443D-B8BF-7A330D32D417}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

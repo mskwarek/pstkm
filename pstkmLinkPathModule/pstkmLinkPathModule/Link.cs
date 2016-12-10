@@ -11,6 +11,10 @@ namespace pstkmLinkPathModule
         private Node start_node;
         private Node end_node;
 
-        public Link() { }
+        public Link(Node start, Node end)
+        {
+            this.start_node = start;
+            this.end_node = end;
+        }
     }
 }
