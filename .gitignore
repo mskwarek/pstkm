@@ -40,6 +40,10 @@ TestResult.xml
 [Rr]eleasePS/
 dlldata.c
 
+pstkmLinkPathPy/.idea/*
+
+
+
 # DNX
 project.lock.json
 artifacts/
