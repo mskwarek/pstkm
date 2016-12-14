@@ -1,0 +1,34 @@
+set TRANSPORT_NODE := T1;
+set CENTRAL := C;
+set DEMAND := AP1 AP2;
+
+set EDGE := (C, T1) (C, AP1) (C, AP2) (T1, AP1) (T1, AP2);
+
+param TRENCHING_COST := 	
+			C T1 5
+			T1 AP1 5
+			T1 AP2 5
+			C AP1 20
+			C AP2 20;
+
+
+set CABLE_TYPE :=
+		C2 C4;
+
+param fiber_s :=
+		C2 2
+		C4 4;
+	  
+param M0 := 100;
+param CABINET_COST := 5;
+
+param hd :=
+		AP1 2
+		AP2 2;
+
+param hc :=
+		C2 10
+		C4 15;
+		
+
+		
