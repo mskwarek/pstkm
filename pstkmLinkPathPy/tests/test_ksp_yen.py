@@ -1,5 +1,5 @@
 import unittest
-import ksp
+from pstkmLinkPathPy.ksp import *
 
 
 class TestKsp_yen(unittest.TestCase):

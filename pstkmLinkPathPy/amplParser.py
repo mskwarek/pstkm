@@ -75,12 +75,9 @@ class AmplParser:
 
 
     def parse_edges(self, raw_edges):
-        raw_edges = raw_edges.replace(') (', '), (')
-        tmp = raw_edges.split(',')
-        edges = list()
-        for t in tmp:
-            s = t.split(', ')
-            s[0] = s[0].replace('(', '')
-            s[1] = s[1].replace(')', '')
-            edges.append(tuple(str(s[0]), str(s[1])))
+        raw_edges = raw_edges[1:-1].split(') (')
+        edges = []
+        for raw in raw_edges:
+            l = raw.split(', ')
+            edges.append(tuple(l))
         return edges

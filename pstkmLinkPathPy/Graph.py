@@ -1,7 +1,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
-from AmplParser import AmplParser
-
+from amplParser import AmplParser
+from ksp import YenKSP
 
 class Graph:
 
@@ -25,13 +25,14 @@ class Graph:
     def get_edges(self):
         self.edges = self.amplParser.get_edges()
 
-
-
-    def draw(self):
+    def generate_graph(self):
         self.get_nodes()
         self.get_edges()
         self.get_demands()
         self.graph.add_edges_from(self.edges)
+
+    def draw(self):
+        self.generate_graph()
         nx.draw(self.graph, with_labels=True)
         plt.show()
 
@@ -41,7 +42,6 @@ class Graph:
 
 if __name__ == '__main__':
     graph = Graph()
-    # graph.draw()
-    graph.get_edges()
-    print graph.edges
+    graph.draw()
+
 
