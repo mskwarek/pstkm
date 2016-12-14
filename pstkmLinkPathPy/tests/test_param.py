@@ -1,5 +1,5 @@
 import unittest
-from amplComponents import *
+from amplComponents import Param
 
 
 class TestParam(unittest.TestCase):

@@ -1,2 +1,0 @@
-#gowno
-#gowno2
