@@ -5,6 +5,12 @@ set DEMAND := AP1 AP2;
 set EDGE := (C, T1) (C, T2) (C, T3)
 			(T2, AP2) (T1, AP1) (T3, T4)
 			(T4, AP1) (T4, AP2);
+			
+set P := P1 P2 P3 P4;
+set PL :=	(P1, AP1, C, T1) (P1, AP1, T1, AP1)
+			(P2, AP1, C, T3) (P2, AP1, T3, T4) (P2, AP1, T4, AP1)
+			(P3, AP2, C, T2) (P3, AP2, T2, AP2)
+			(P4, AP2, C, T3) (P2, AP2, T3, T4) (P2, AP2, T4, AP2);
 
 param TRENCHING_COST := 	
 			C T1 7

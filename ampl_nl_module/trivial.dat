@@ -6,6 +6,13 @@ set EDGE := (C, T1) (C, AP1) (C, AP2)
 			(T1, AP1) (T1, AP2)
 			;
 
+set P := P1 P2 P3 P4;
+set PL :=	(P1, AP1, C, AP1)
+			(P2, AP1, C, T1) (P2, AP1, T1, AP1)
+			(P3, AP2, C, AP2)
+			(P4, AP2, C, T1) (P4, AP2, T1, AP2)
+			
+			
 param TRENCHING_COST := 	
 			C T1 5
 			T1 AP1 5
